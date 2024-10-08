@@ -1,0 +1,43 @@
+    /*
+        (app|router).use will match '/' with  all paths as all starts with '/'
+        The Solution :1- is to make all unique paths at top and don't call next() to send response
+        2- is to set (router|app) to .get as .get will match the url exactly as it is
+    */
+
+    /*
+        res.sendFile(path.join(__dirname , '..' , 'views' ,'shop.html')); to send static files
+        we use path package to work with windows wich uses (\) and linux wich uses(/) in directories
+        it recognize os we are working on and then make correct path for you and ..==../
+    */
+
+    /* 
+        app.get filter for only get requests ,post filter for post request
+        /admin/add-product=> post
+        and here only product is checked as it won't enter here is the start is not /admin
+    */
+
+    /*
+        admin/add-product => get
+        and here only add-product is checked as it won't enter here is the start is not /admin 
+    */
+
+    /* 
+        In writing on Json files I have to make sure that i read file contnet first before writeFile 
+        as writing on file if it's name not exist in path it will create new one and if it exists 
+        it will overwrite it so to keep old data available i have to read old data first and then push all data 
+        together
+    */
+
+    /*
+        in render Uses default templating enginee configured at main file / path configured at main file
+        we don't need to state shop.pug as we congfigured that pug is our templating engiee
+        so it will look for .pug extention
+    */
+
+    /*
+        express.static make path passed as parameter can be accessed / served statically 
+        (statically means not using router middlewarebut direcly forwarded to 'fs'( public folder))
+        express.static forward request to public folder and if there more than one public it will forward 
+        request to all of them untill required file is hit
+        If request is directly made for file css , js , imgs enable static serving for these files
+    */

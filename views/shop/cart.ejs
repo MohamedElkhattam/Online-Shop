@@ -1,0 +1,30 @@
+    <%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css">
+    </head>
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main class="mainCartStyle">
+            <%if (products.length > 0 ) {%>
+                <ul class="cartList"> 
+                    <% for (let product of products) { %>
+                        <li>
+                            <div class="productDetails">
+                                <span>Product: <%= product.title %></span>
+                                <span>Quantity: <%= product.cartProduct.quantity %></span>
+                            </div>
+                            <form action="/delete-product" method="post">
+                                <button class="deleteButton">Delete</button>
+                                <input type="hidden" name="productId" value="<%= product.id %>">
+                            </form>
+                        </li>
+                        
+                    <%}%>
+                </ul>
+                <!-- <p>Total Price : <%=totalPrice%></p> -->
+            <%} else {%>
+                <h1 > Your Cart Is Empty !</h1>
+            <%}%>
+        </main>        
+        <script src="/js/main.js"></script>
+    </body>
+</html>
