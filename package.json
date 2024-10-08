@@ -1,0 +1,27 @@
+{
+  "name": "project-one",
+  "version": "1.0.0",
+  "description": "Fisrt Express project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Mohamed Elkhattam",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^5.0.0",
+    "csurf": "^1.2.2",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.2.0",
+    "mongodb": "^6.8.0",
+    "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^22.2.0",
+    "nodemon": "^3.1.4"
+  }
+}
